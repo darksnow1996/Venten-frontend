@@ -1,5 +1,5 @@
 html{
-    background-color: #fafafa;
+    background-color: #f8f9fa;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .container{
@@ -15,7 +15,7 @@ html{
 }
 .body-wrapper{
     display: flex;
-    width: 80%;
+    width: 50%;
     flex-direction: column;
 }
 
@@ -30,11 +30,11 @@ html{
 
 }
 .filter-header{
-    display: flex;
-    justify-content: flex-start;
-    font-size: 2.5em;
+    font-weight: lighter;
+    justify-content: flex-end;
+    font-size: 2em;
     padding-top: 15px;
-    padding-bottom: 15px;
+    
 }
 
 .filter-box{
@@ -42,35 +42,40 @@ html{
     width: 100%;
     flex-direction: column;
     align-items: center;
-    height: 250px;
+    height: 170px;
     /* border: 1px solid black; */
     justify-content: space-evenly;
     border-radius: 10px;
     background-color: #ffffff;
-    box-shadow: 0px 0px 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.03);
     margin-bottom: 1em;
     padding: 15px;
     cursor: pointer;
+    transition: 1s ease;
 
 
 }
 .filter-box:hover{
-    background-color: #f7f7f7;
+    transform: scale(1.1);
+    transition: 1s ease;
 
 }
 .filter-year{
-    font-size: 3em;
+    font-size: 1.5em;
     font-weight: bolder;
 
 }
 
 .filter-gender{
-    font-size: 1.8em;
+    font-size: 1em;
+    text-transform: capitalize;
 
 }
 .filter-countries{
     display: flex;
-    width: 100%;
+    min-width: 65%;
+    max-width:70%;
+    
     flex-direction: row;
     justify-content: center;
      
@@ -79,15 +84,23 @@ html{
 }
 
 .country{
-     width:100px;
+     
+    width:25%;
+     
      height: 30px;
      display: flex;
+     flex-wrap: nowrap;
+     padding: 3px;
+     
      border-radius: 30px;
      align-items: center;
      justify-content: center;
      /* border: 1px solid yellow; */
-     background-color: grey;
+     background-color: #f8f9fa;
+     color: #6c757d !important;
+     font-weight: bold;
      margin: 3px;
+     font-size: 75%;
 
 }
 
@@ -121,14 +134,20 @@ html{
     flex-direction: row;
     flex-wrap: wrap;
     /* border:1px solid black; */
-    height: 250px;
+    height: 170px;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0px 0px 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .03);
     margin-bottom: 2em;
     padding: 15px;
     background-color: #ffffff;
+    transition: 1s ease;
+
+}
+.owner-card:hover {
+    transform: scale(1.1);
+    transition: 1s ease;
 
 }
 .card-image{
@@ -138,7 +157,7 @@ html{
     /* border:1px solid green; */
     border-radius: 5px;
     background-color: #f7f7f7;
-    box-shadow: 0px 0px 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .03);
 
 }
 .card-image-style{
@@ -153,7 +172,7 @@ html{
     
 }
 .card-name{
-    font-size: 2em;
+    font-size: 150%;
 
 }
 .card-branding{
@@ -244,6 +263,28 @@ html{
     .owner-card {
         height: auto;
     }
+
+    .filter-box{
+        min-height: 200px;
+        height: auto;
+    }
+
+    .filter-countries {
+      width: 50%;
+      flex-wrap: wrap;
+
+
+
+    }
+
+    .country {
+
+        width: 25%;
+
+        
+
+    }
+
     
 }
 

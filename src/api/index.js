@@ -1,6 +1,7 @@
 const url = "https://my-venton-backend.herokuapp.com/";
 const filterUrl = "https://ven10.co/assessment/filter.json";
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+const localUrl = 'http://localhost:6000/'
    
 export const getFilters = async() => {
     try{
@@ -34,14 +35,17 @@ export const getFilterById = async(id)=> {
 
 export const queryOwner = async(filter) => {
     try{
-    const response = await fetch(`${url}`,{
-        method:"GET",
+      //  console.log('here');
+      // console.log(JSON.stringify({...filter}));
+    const response = await fetch(url,{
+        method:"POST",
         headers:{
             "Content-type": "application/json"
         },
-        body:JSON.stringify(filter)
+        body:JSON.stringify({...filter})
 
     });
+   // console.log(response);
     const result = await response.json();
     const {owners} = result.data;
     return owners;

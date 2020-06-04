@@ -24,7 +24,7 @@ class Filters extends React.Component {
 
   async componentDidMount(){
     try{
-        console.log(this.props);
+       // console.log(this.props);
       const filters = await getFilters();
      // console.log(filters);
        this.setState({
@@ -58,7 +58,7 @@ class Filters extends React.Component {
                 
                 {!this.state.filterIsLoading ?  
                 (this.state.filters.length > 0 ? this.state.filters.map((filter,index)=> {
-                  return  <Filter  onSelect={this.goToOwners} key={filter.id} {...filter} id={index} />
+                  return  <Filter  onSelect={this.goToOwners} key={filter.id} {...filter} id={filter.id} />
                 })
                 : <div>No Filter Data Found</div>)
                 :

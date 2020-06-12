@@ -3,7 +3,7 @@ import React from 'react';
 
 
 import CarOwner from '../components/carowner';
-import {getFilters,queryOwner} from '../api';
+import {getFilterById,queryOwner} from '../api';
 import Loader from 'react-loader-spinner';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleLeft} from '@fortawesome/free-solid-svg-icons';
@@ -32,7 +32,9 @@ class Owners extends React.Component {
       ownerisLoading:true
     });
     try{
-    const owners = await queryOwner(id);
+      const filterpayload = await getFilterById(id);
+     // console.log(filterpayload);
+    const owners = await queryOwner(filterpayload);
   //  console.log(owners);
     this.setState({
       owners,

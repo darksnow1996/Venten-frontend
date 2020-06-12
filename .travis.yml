@@ -1,0 +1,9 @@
+sudo:required
+services:
+    - docker
+
+before_install:
+    - docker build -t darksnow/reactweb -f Dockerfile.dev .
+
+script:
+    - docker run  darksnow/reactweb npm run test -- --coverage
